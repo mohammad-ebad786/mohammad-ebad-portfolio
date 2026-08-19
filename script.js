@@ -1,16 +1,11 @@
-/* =========================================================
-   MOHAMMAD EBAD — PORTFOLIO JAVASCRIPT
-   Version: Polished / Responsive / Production Ready
-========================================================= */
+/* ==================================== MOHAMMAD EBAD — PORTFOLIO ================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     "use strict";
 
 
-    /* =========================================================
-       ELEMENT SELECTORS
-    ========================================================= */
+    /* ========================================= ELEMENT SELECTORS ==================================================== */
 
     const body = document.body;
 
@@ -43,9 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       REDUCED MOTION DETECTION
-    ========================================================= */
+    /* ===================================  REDUCED MOTION DETECTION =============================================== */
 
     const prefersReducedMotion =
         window.matchMedia(
@@ -54,11 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       PAGE LOADER
-       Works if .page-loader exists in HTML.
-       Otherwise does nothing.
-    ========================================================= */
+    /* ========================================= PAGE LOADER =========================================== */
 
     const pageLoader =
         document.querySelector(".page-loader");
@@ -98,9 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       MOBILE NAVIGATION
-    ========================================================= */
+    /* ========================================== MOBILE NAVIGATION ======================================== */
 
     function openMobileMenu() {
 
@@ -192,9 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       CLOSE MOBILE MENU ON NAVIGATION CLICK
-    ========================================================= */
+    /* ======================================= CLOSE MOBILE MENU ON NAVIGATION CLICK ========================================= */
 
     navigationLinks.forEach(link => {
 
@@ -225,9 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       ESCAPE KEY
-    ========================================================= */
+    /* ============================================= ESCAPE KEY ====================================== */
 
     document.addEventListener(
         "keydown",
@@ -250,9 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       CLOSE MENU WHEN CLICKING OUTSIDE
-    ========================================================= */
+    /* ============================================== CLOSE MENU WHEN CLICKING OUTSIDE ============================================ */
 
     document.addEventListener(
         "click",
@@ -290,9 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       CLOSE MOBILE MENU WHEN WINDOW RESIZES
-    ========================================================= */
+    /* ========================================= CLOSE MOBILE MENU WHEN WINDOW RESIZES ======================================= */
 
     window.addEventListener(
         "resize",
@@ -315,9 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       NAVBAR SCROLL EFFECT
-    ========================================================= */
+    /* ========================================= NAVBAR SCROLL EFFECT ====================================== */
 
     function updateNavbar() {
 
@@ -353,9 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       ACTIVE NAVIGATION LINK
-    ========================================================= */
+    /* ========================================== ACTIVE NAVIGATION LINK ============================================= */
 
     function updateActiveNavigation() {
 
@@ -394,11 +369,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 
-        /*
-           If user is near the bottom,
-           automatically activate Contact.
-        */
 
+        
         if (
             window.innerHeight +
             window.scrollY >=
@@ -462,9 +434,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       SMOOTH SCROLLING
-    ========================================================= */
+    /* ==================================== SMOOTH SCROLLING ============================ */
 
     document.querySelectorAll(
         'a[href^="#"]'
@@ -545,9 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       SCROLL REVEAL
-    ========================================================= */
+    /* ============================================ SCROLL REVEAL ===================================== */
 
     const revealElements =
         document.querySelectorAll(
@@ -620,9 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
 
-                /*
-                   Small stagger effect.
-                */
+
 
                 if (
                     element.classList.contains(
@@ -664,9 +630,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       SKILL CARD INTERACTION
-    ========================================================= */
+    /* ====================================== SKILL CARD INTERACTION ========================================== */
 
     const skillCards =
         document.querySelectorAll(
@@ -700,9 +664,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-        /*
-           Keyboard accessibility.
-        */
+
 
         card.addEventListener(
             "focusin",
@@ -731,9 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       PROJECT CARD INTERACTION
-    ========================================================= */
+    /* =========================================== PROJECT CARD INTERACTION ==================================== */
 
     const projectCards =
         document.querySelectorAll(
@@ -770,9 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* =========================================================
-       CONTACT FORM
-    ========================================================= */
+    /* ============================================ CONTACT FORM ======================================== */
 
     if (contactForm) {
 
@@ -830,9 +788,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     messageInput.value.trim();
 
 
-                /* =====================================
-                   VALIDATION
-                ===================================== */
+                /* ============================== VALIDATION ====================== */
 
                 if (
                     name.length < 2
@@ -889,9 +845,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-                /* =====================================
-                   BUTTON LOADING STATE
-                ===================================== */
+                /* ============================ BUTTON LOADING STATE =========================== */
 
                 const submitButton =
                     contactForm.querySelector(
@@ -917,9 +871,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-                /* =====================================
-                   CREATE EMAIL
-                ===================================== */
+                /* ========================== CREATE EMAIL ================== */
 
                 const mailSubject =
                     encodeURIComponent(
@@ -993,9 +945,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       FORM MESSAGE SYSTEM
-    ========================================================= */
+    /* ========================================= FORM MESSAGE SYSTEM ====================================== */
 
     function showFormMessage(
         message,
@@ -1065,9 +1015,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       INPUT FOCUS EFFECTS
-    ========================================================= */
+    /* ============================================= INPUT FOCUS EFFECTS ========================================= */
 
     const formInputs =
         document.querySelectorAll(
@@ -1108,9 +1056,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       BACK TO TOP
-    ========================================================= */
+    /* =========================================== BACK TO TOP ============================================ */
 
     function updateBackToTop() {
 
@@ -1149,10 +1095,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       CURSOR GLOW
-       Desktop only
-    ========================================================= */
+    /* ======================================= CURSOR GLOW Desktop only ======================================== */
 
     if (
         cursorGlow &&
@@ -1212,10 +1155,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       MAGNETIC BUTTON EFFECT
-       Applies to CTA buttons on desktop.
-    ========================================================= */
+    /* ====================================== MAGNETIC BUTTON EFFECT Applies to CTA buttons on desktop.=========================================== */
 
     if (
         !prefersReducedMotion &&
@@ -1275,9 +1215,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       IMAGE LOAD HANDLING
-    ========================================================= */
+    /* ====================================== IMAGE LOAD HANDLING ==================================== */
 
     const images =
         document.querySelectorAll(
@@ -1316,9 +1254,7 @@ Sent from Mohammad Ebad's portfolio website.`
         );
 
 
-        /*
-           If image was already cached.
-        */
+
 
         if (image.complete) {
 
@@ -1336,9 +1272,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       CURRENT YEAR
-    ========================================================= */
+    /* =========================================== CURRENT YEAR ====================================== */
 
     const currentYear =
         new Date().getFullYear();
@@ -1366,9 +1300,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       HERO PARALLAX
-    ========================================================= */
+    /* ============================================= HERO PARALLAX ======================================== */
 
     const hero =
         document.querySelector(
@@ -1462,9 +1394,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       PROJECT VISUAL TILT
-    ========================================================= */
+    /* ============================================= PROJECT VISUAL TILT ========================================== */
 
     if (
         !prefersReducedMotion &&
@@ -1530,9 +1460,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       EXTERNAL LINKS — SAFETY
-    ========================================================= */
+    /* ========================================== EXTERNAL LINKS — SAFETY ============================================= */
 
     document.querySelectorAll(
         'a[target="_blank"]'
@@ -1557,10 +1485,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       PREVENT EMPTY PROJECT LINKS
-       Only prevents "#" links.
-    ========================================================= */
+    /* ====================================== PREVENT EMPTY PROJECT LINKS Only prevents "#" links. ========================================== */
 
     document.querySelectorAll(
         '.project-link[href="#"]'
@@ -1584,9 +1509,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       ACCESSIBILITY — TAB USER DETECTION
-    ========================================================= */
+    /* =========================================== ACCESSIBILITY — TAB USER DETECTION ============================================ */
 
     let usingKeyboard = false;
 
@@ -1630,10 +1553,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       PAGE VISIBILITY
-       Pause unnecessary effects when tab hidden.
-    ========================================================= */
+    /* ======================================PAGE VISIBILITY Pause unnecessary effects when tab hidden. =========================================== */
 
     document.addEventListener(
         "visibilitychange",
@@ -1660,9 +1580,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
 
-    /* =========================================================
-       INITIALIZATION
-    ========================================================= */
+    /* ======================================= INITIALIZATION ======================================== */
 
     requestAnimationFrame(
         () => {
