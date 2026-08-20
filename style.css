@@ -4585,12 +4585,25 @@ section {
             70px;
     }
 
-    .amazon-main {
+        .amazon-main {
+        grid-template-columns:
+            repeat(2, 1fr);
+
         padding:
             15px;
 
         gap:
             7px;
+    }
+
+    .ads-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .ads-stats div:last-child {
+        grid-column:
+            span 2;
     }
 
     .amazon-box {

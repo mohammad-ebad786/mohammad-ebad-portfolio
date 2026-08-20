@@ -144,6 +144,68 @@
 
     </style>
 
+
+    <style>
+        /* =========================================================
+           MOBILE NAV ACTIONS
+           ========================================================= */
+
+        .mobile-nav-actions {
+            display:
+                none;
+        }
+
+        @media (max-width: 800px) {
+
+            .nav-links .mobile-nav-actions {
+                display:
+                    flex;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    8px;
+
+                margin-top:
+                    12px;
+
+                padding-top:
+                    12px;
+
+                border-top:
+                    1px solid var(--line);
+            }
+
+            .nav-links .mobile-nav-actions .nav-button {
+                display:
+                    flex !important;
+
+                width:
+                    100%;
+
+                min-height:
+                    44px;
+
+                align-items:
+                    center;
+
+                justify-content:
+                    space-between;
+
+                padding:
+                    12px 14px;
+
+                border:
+                    1px solid var(--line);
+
+                border-radius:
+                    10px;
+            }
+
+        }
+    </style>
+
 </head>
 
 
@@ -224,6 +286,44 @@
         <a href="#contact">
             Contact
         </a>
+
+
+        <div class="mobile-nav-actions">
+
+            <a href="./resume/Mohammad-Ebad-Resume.pdf"
+               class="nav-button"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Mohammad Ebad resume">
+
+                <span>
+                    Resume
+                </span>
+
+                <span class="nav-button-arrow"
+                      aria-hidden="true">
+                    ↓
+                </span>
+
+            </a>
+
+
+            <a href="#contact"
+               class="nav-button">
+
+                <span>
+                    Let's Talk
+                </span>
+
+                <span class="nav-button-arrow"
+                      aria-hidden="true">
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
 
     </nav>
 
