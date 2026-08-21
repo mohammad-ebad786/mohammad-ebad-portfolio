@@ -1,13 +1,14 @@
 /* ==================================== MOHAMMAD EBAD — PORTFOLIO ================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
 
 
     /* ========================================= ELEMENT SELECTORS ==================================================== */
 
-    const body = document.body;
+    const body =
+        document.body;
 
     const navbar =
         document.querySelector(".navbar");
@@ -31,26 +32,28 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".back-to-top");
 
     const sections =
-        document.querySelectorAll("main section[id]");
+        document.querySelectorAll(
+            "main section[id]"
+        );
 
     const navigationLinks =
-        document.querySelectorAll(".nav-links a");
+        document.querySelectorAll(
+            ".nav-links a"
+        );
 
 
-
-    /* ===================================  REDUCED MOTION DETECTION =============================================== */
+    /* =================================== REDUCED MOTION DETECTION =============================================== */
 
     const prefersReducedMotion =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
         ).matches;
 
-
-
     /* ========================================= PAGE LOADER =========================================== */
 
     const pageLoader =
         document.querySelector(".page-loader");
+
 
     function hidePageLoader() {
 
@@ -58,50 +61,75 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        pageLoader.classList.add("loaded");
+        pageLoader.classList.add(
+            "loaded"
+        );
 
-        setTimeout(() => {
+        setTimeout(
+            function () {
 
-            pageLoader.style.display = "none";
+                pageLoader.style.display =
+                    "none";
 
-        }, 700);
-
+            },
+            700
+        );
     }
 
 
-    if (document.readyState === "complete") {
+    if (
+        document.readyState ===
+        "complete"
+    ) {
 
-        setTimeout(hidePageLoader, 150);
+        setTimeout(
+            hidePageLoader,
+            150
+        );
 
     } else {
 
         window.addEventListener(
             "load",
-            () => {
-                setTimeout(hidePageLoader, 150);
+            function () {
+
+                setTimeout(
+                    hidePageLoader,
+                    150
+                );
+
             },
-            { once: true }
+            {
+                once: true
+            }
         );
-
     }
-
-
 
     /* ========================================== MOBILE NAVIGATION ======================================== */
 
     function openMobileMenu() {
 
-        if (!menuBtn || !navLinks) {
+        if (
+            !menuBtn ||
+            !navLinks
+        ) {
             return;
         }
 
-        navLinks.classList.add("mobile-open");
+        navLinks.classList.add(
+            "mobile-open"
+        );
 
         if (navButton) {
-            navButton.classList.add("mobile-open");
+
+            navButton.classList.add(
+                "mobile-open"
+            );
         }
 
-        menuBtn.classList.add("active");
+        menuBtn.classList.add(
+            "active"
+        );
 
         menuBtn.setAttribute(
             "aria-expanded",
@@ -113,23 +141,35 @@ document.addEventListener("DOMContentLoaded", () => {
             "Close navigation menu"
         );
 
-        body.classList.add("menu-open");
+        body.classList.add(
+            "menu-open"
+        );
     }
 
 
     function closeMobileMenu() {
 
-        if (!menuBtn || !navLinks) {
+        if (
+            !menuBtn ||
+            !navLinks
+        ) {
             return;
         }
 
-        navLinks.classList.remove("mobile-open");
+        navLinks.classList.remove(
+            "mobile-open"
+        );
 
         if (navButton) {
-            navButton.classList.remove("mobile-open");
+
+            navButton.classList.remove(
+                "mobile-open"
+            );
         }
 
-        menuBtn.classList.remove("active");
+        menuBtn.classList.remove(
+            "active"
+        );
 
         menuBtn.setAttribute(
             "aria-expanded",
@@ -141,7 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
             "Open navigation menu"
         );
 
-        body.classList.remove("menu-open");
+        body.classList.remove(
+            "menu-open"
+        );
     }
 
 
@@ -168,53 +210,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (menuBtn && navLinks) {
+    if (
+        menuBtn &&
+        navLinks
+    ) {
 
         menuBtn.addEventListener(
             "click",
             toggleMobileMenu
         );
-
     }
-
-
 
     /* ======================================= CLOSE MOBILE MENU ON NAVIGATION CLICK ========================================= */
 
-    navigationLinks.forEach(link => {
+    navigationLinks.forEach(
+        function (link) {
 
-        link.addEventListener(
-            "click",
-            () => {
+            link.addEventListener(
+                "click",
+                function () {
 
-                closeMobileMenu();
+                    closeMobileMenu();
 
-            }
-        );
+                }
+            );
 
-    });
+        }
+    );
 
 
     if (navButton) {
 
         navButton.addEventListener(
             "click",
-            () => {
+            function () {
 
                 closeMobileMenu();
 
             }
         );
-
     }
-
-
 
     /* ============================================= ESCAPE KEY ====================================== */
 
     document.addEventListener(
         "keydown",
-        event => {
+        function (event) {
 
             if (
                 event.key === "Escape" &&
@@ -231,13 +272,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-
-
     /* ============================================== CLOSE MENU WHEN CLICKING OUTSIDE ============================================ */
 
     document.addEventListener(
         "click",
-        event => {
+        function (event) {
 
             if (
                 !navLinks ||
@@ -249,13 +288,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-
             const clickedInsideMenu =
-                navLinks.contains(event.target);
+                navLinks.contains(
+                    event.target
+                );
 
             const clickedMenuButton =
-                menuBtn.contains(event.target);
-
+                menuBtn.contains(
+                    event.target
+                );
 
             if (
                 !clickedInsideMenu &&
@@ -270,12 +311,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* ========================================= CLOSE MOBILE MENU WHEN WINDOW RESIZES ======================================= */
 
     window.addEventListener(
         "resize",
-        () => {
+        function () {
 
             if (
                 window.innerWidth > 900 &&
@@ -293,7 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-
     /* ========================================= NAVBAR SCROLL EFFECT ====================================== */
 
     function updateNavbar() {
@@ -302,7 +341,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        if (window.scrollY > 40) {
+        if (
+            window.scrollY > 40
+        ) {
 
             navbar.classList.add(
                 "scrolled"
@@ -315,19 +356,18 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         }
-
     }
 
 
     window.addEventListener(
         "scroll",
         updateNavbar,
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
-
     updateNavbar();
-
 
 
     /* ========================================== ACTIVE NAVIGATION LINK ============================================= */
@@ -338,47 +378,48 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-
-        let currentSection = "";
-
+        let currentSection =
+            "";
 
         const scrollPosition =
             window.scrollY + 220;
 
 
-        sections.forEach(section => {
+        sections.forEach(
+            function (section) {
 
-            const sectionTop =
-                section.offsetTop;
+                const sectionTop =
+                    section.offsetTop;
 
-            const sectionBottom =
-                sectionTop +
-                section.offsetHeight;
+                const sectionBottom =
+                    sectionTop +
+                    section.offsetHeight;
 
+                if (
+                    scrollPosition >= sectionTop &&
+                    scrollPosition < sectionBottom
+                ) {
 
-            if (
-                scrollPosition >= sectionTop &&
-                scrollPosition < sectionBottom
-            ) {
+                    currentSection =
+                        section.id;
 
-                currentSection =
-                    section.id;
+                }
 
             }
-
-        });
-
+        );
 
 
-        
         if (
             window.innerHeight +
             window.scrollY >=
-            document.documentElement.scrollHeight - 120
+            document.documentElement.scrollHeight -
+            120
         ) {
 
             const lastSection =
-                sections[sections.length - 1];
+                sections[
+                sections.length - 1
+                ];
 
             if (lastSection) {
 
@@ -386,133 +427,124 @@ document.addEventListener("DOMContentLoaded", () => {
                     lastSection.id;
 
             }
-
         }
 
 
-        navigationLinks.forEach(link => {
+        navigationLinks.forEach(
+            function (link) {
 
-            const href =
-                link.getAttribute("href");
+                const href =
+                    link.getAttribute(
+                        "href"
+                    );
 
-
-            link.classList.remove(
-                "active"
-            );
-
-
-            if (
-                href ===
-                `#${currentSection}`
-            ) {
-
-                link.classList.add(
+                link.classList.remove(
                     "active"
                 );
 
+                if (
+                    href ===
+                    "#" + currentSection
+                ) {
+
+                    link.classList.add(
+                        "active"
+                    );
+
+                }
+
             }
-
-        });
-
+        );
     }
 
 
     window.addEventListener(
         "scroll",
         updateActiveNavigation,
-        { passive: true }
+        {
+            passive: true
+        }
     );
-
 
     window.addEventListener(
         "resize",
         updateActiveNavigation
     );
 
-
     updateActiveNavigation();
-
 
 
     /* ==================================== SMOOTH SCROLLING ============================ */
 
     document.querySelectorAll(
         'a[href^="#"]'
-    ).forEach(anchor => {
+    ).forEach(
+        function (anchor) {
 
-        anchor.addEventListener(
-            "click",
-            event => {
+            anchor.addEventListener(
+                "click",
+                function (event) {
 
-                const targetId =
-                    anchor.getAttribute(
-                        "href"
-                    );
+                    const targetId =
+                        anchor.getAttribute(
+                            "href"
+                        );
 
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+                        return;
+                    }
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
 
-                    return;
+                    if (!target) {
+                        return;
+                    }
 
-                }
+                    event.preventDefault();
 
+                    const navbarHeight =
+                        navbar
+                            ? navbar.offsetHeight
+                            : 0;
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+                    const targetPosition =
+                        target.getBoundingClientRect()
+                            .top +
+                        window.scrollY -
+                        navbarHeight;
 
+                    if (
+                        prefersReducedMotion
+                    ) {
 
-                if (!target) {
-                    return;
-                }
+                        window.scrollTo(
+                            0,
+                            targetPosition
+                        );
 
+                    } else {
 
-                event.preventDefault();
+                        window.scrollTo({
+                            top:
+                                targetPosition,
 
+                            behavior:
+                                "smooth"
+                        });
 
-                const navbarHeight =
-                    navbar
-                        ? navbar.offsetHeight
-                        : 0;
-
-
-                const targetPosition =
-                    target.getBoundingClientRect()
-                        .top +
-                    window.scrollY -
-                    navbarHeight;
-
-
-                if (prefersReducedMotion) {
-
-                    window.scrollTo(
-                        0,
-                        targetPosition
-                    );
-
-                } else {
-
-                    window.scrollTo({
-
-                        top:
-                            targetPosition,
-
-                        behavior:
-                            "smooth"
-
-                    });
+                    }
 
                 }
+            );
 
-            }
-        );
-
-    });
-
+        }
+    );
 
 
     /* ============================================ SCROLL REVEAL ===================================== */
@@ -550,30 +582,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const revealObserver =
             new IntersectionObserver(
-                (entries, observer) => {
+                function (
+                    entries,
+                    observer
+                ) {
 
-                    entries.forEach(entry => {
+                    entries.forEach(
+                        function (entry) {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add(
-                                "reveal-visible"
-                            );
+                                entry.target.classList.add(
+                                    "reveal-visible"
+                                );
 
+                                observer.unobserve(
+                                    entry.target
+                                );
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
                     threshold: 0.08,
+
                     rootMargin:
                         "0px 0px -50px 0px"
                 }
@@ -581,13 +618,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         revealElements.forEach(
-            (element, index) => {
+            function (
+                element,
+                index
+            ) {
 
                 element.classList.add(
                     "reveal-element"
                 );
-
-
 
 
                 if (
@@ -601,11 +639,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     element.style.setProperty(
                         "--reveal-delay",
-                        `${(index % 6) * 70}ms`
+                        (index % 6) * 70 + "ms"
                     );
 
                 }
-
 
                 revealObserver.observe(
                     element
@@ -617,7 +654,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
 
         revealElements.forEach(
-            element => {
+            function (element) {
 
                 element.classList.add(
                     "reveal-visible"
@@ -629,7 +666,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-
     /* ====================================== SKILL CARD INTERACTION ========================================== */
 
     const skillCards =
@@ -638,59 +674,58 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    skillCards.forEach(card => {
+    skillCards.forEach(
+        function (card) {
 
-        card.addEventListener(
-            "mouseenter",
-            () => {
+            card.addEventListener(
+                "mouseenter",
+                function () {
 
-                card.classList.add(
-                    "skill-hover"
-                );
+                    card.classList.add(
+                        "skill-hover"
+                    );
 
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            () => {
-
-                card.classList.remove(
-                    "skill-hover"
-                );
-
-            }
-        );
+                }
+            );
 
 
+            card.addEventListener(
+                "mouseleave",
+                function () {
+
+                    card.classList.remove(
+                        "skill-hover"
+                    );
+
+                }
+            );
 
 
-        card.addEventListener(
-            "focusin",
-            () => {
+            card.addEventListener(
+                "focusin",
+                function () {
 
-                card.classList.add(
-                    "skill-hover"
-                );
+                    card.classList.add(
+                        "skill-hover"
+                    );
 
-            }
-        );
+                }
+            );
 
 
-        card.addEventListener(
-            "focusout",
-            () => {
+            card.addEventListener(
+                "focusout",
+                function () {
 
-                card.classList.remove(
-                    "skill-hover"
-                );
+                    card.classList.remove(
+                        "skill-hover"
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
-
+        }
+    );
 
 
     /* =========================================== PROJECT CARD INTERACTION ==================================== */
@@ -701,33 +736,34 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
 
-    projectCards.forEach(card => {
+    projectCards.forEach(
+        function (card) {
 
-        card.addEventListener(
-            "mouseenter",
-            () => {
+            card.addEventListener(
+                "mouseenter",
+                function () {
 
-                card.classList.add(
-                    "project-hover"
-                );
+                    card.classList.add(
+                        "project-hover"
+                    );
 
-            }
-        );
+                }
+            );
 
 
-        card.addEventListener(
-            "mouseleave",
-            () => {
+            card.addEventListener(
+                "mouseleave",
+                function () {
 
-                card.classList.remove(
-                    "project-hover"
-                );
+                    card.classList.remove(
+                        "project-hover"
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
-
+        }
+    );
 
 
     /* ============================================ CONTACT FORM ======================================== */
@@ -736,7 +772,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contactForm.addEventListener(
             "submit",
-            event => {
+            async function (event) {
 
                 event.preventDefault();
 
@@ -759,6 +795,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const messageInput =
                     document.getElementById(
                         "message"
+                    );
+
+                const formStatus =
+                    document.getElementById(
+                        "formStatus"
+                    );
+
+                const submitButton =
+                    contactForm.querySelector(
+                        ".contact-submit"
                     );
 
 
@@ -843,15 +889,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
-
-
                 /* ============================ BUTTON LOADING STATE =========================== */
-
-                const submitButton =
-                    contactForm.querySelector(
-                        ".contact-submit"
-                    );
-
 
                 if (submitButton) {
 
@@ -870,73 +908,121 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
+                if (formStatus) {
 
-                /* ========================== CREATE EMAIL ================== */
+                    formStatus.textContent =
+                        "Sending message...";
 
-                const mailSubject =
-                    encodeURIComponent(
-                        subject ||
-                        "Portfolio Contact — Mohammad Ebad"
-                    );
+                    formStatus.className =
+                        "form-status";
 
-
-                const mailBody =
-                    encodeURIComponent(
-                        `Hello Mohammad,
-
-Name: ${name}
-Email: ${email}
-
-Message:
-${message}
-
-Sent from Mohammad Ebad's portfolio website.`
-                    );
+                }
 
 
-                const emailAddress =
-                    "ibad40493@gmail.com";
+                /* ========================== SUBMIT TO WEB3FORMS ================== */
+
+                try {
+
+                    const formData =
+                        new FormData(
+                            contactForm
+                        );
 
 
-                const mailtoURL =
-                    `mailto:${emailAddress}` +
-                    `?subject=${mailSubject}` +
-                    `&body=${mailBody}`;
+                    const response =
+                        await fetch(
+                            "https://api.web3forms.com/submit",
+                            {
+                                method:
+                                    "POST",
+
+                                body:
+                                    formData
+                            }
+                        );
 
 
-
-                /*
-                   Small delay gives the button
-                   animation time to appear.
-                */
-
-                setTimeout(
-                    () => {
-
-                        window.location.href =
-                            mailtoURL;
+                    const result =
+                        await response.json();
 
 
-                        if (submitButton) {
+                    if (
+                        result.success
+                    ) {
 
-                            submitButton.classList.remove(
-                                "loading"
-                            );
+                        showFormMessage(
+                            "Message sent successfully. Thank you!",
+                            "success"
+                        );
 
-                            submitButton.disabled =
-                                false;
 
-                            submitButton.removeAttribute(
-                                "aria-busy"
+                        if (formStatus) {
+
+                            formStatus.textContent =
+                                "Message sent successfully.";
+
+                            formStatus.classList.add(
+                                "success"
                             );
 
                         }
 
-                    },
-                    prefersReducedMotion
-                        ? 0
-                        : 350
-                );
+
+                        contactForm.reset();
+
+
+                    } else {
+
+                        throw new Error(
+                            "Form submission failed."
+                        );
+
+                    }
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Web3Forms Error:",
+                        error
+                    );
+
+
+                    showFormMessage(
+                        "Something went wrong. Please try again.",
+                        "error"
+                    );
+
+
+                    if (formStatus) {
+
+                        formStatus.textContent =
+                            "Unable to send message. Please try again.";
+
+                        formStatus.classList.add(
+                            "error"
+                        );
+
+                    }
+
+                } finally {
+
+                    if (submitButton) {
+
+                        submitButton.classList.remove(
+                            "loading"
+                        );
+
+                        submitButton.disabled =
+                            false;
+
+                        submitButton.removeAttribute(
+                            "aria-busy"
+                        );
+
+                    }
+
+                }
 
             }
         );
@@ -944,13 +1030,18 @@ Sent from Mohammad Ebad's portfolio website.`
     }
 
 
-
     /* ========================================= FORM MESSAGE SYSTEM ====================================== */
 
     function showFormMessage(
         message,
-        type = "error"
+        type
     ) {
+
+        if (!type) {
+            type =
+                "error";
+        }
+
 
         let messageElement =
             document.querySelector(
@@ -1001,7 +1092,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
         setTimeout(
-            () => {
+            function () {
 
                 messageElement.classList.remove(
                     "show"
@@ -1014,7 +1105,6 @@ Sent from Mohammad Ebad's portfolio website.`
     }
 
 
-
     /* ============================================= INPUT FOCUS EFFECTS ========================================= */
 
     const formInputs =
@@ -1023,37 +1113,52 @@ Sent from Mohammad Ebad's portfolio website.`
         );
 
 
-    formInputs.forEach(input => {
+    formInputs.forEach(
+        function (input) {
 
-        input.addEventListener(
-            "focus",
-            () => {
+            input.addEventListener(
+                "focus",
+                function () {
 
-                input
-                    .closest(".form-group")
-                    ?.classList.add(
-                        "focused"
-                    );
+                    const formGroup =
+                        input.closest(
+                            ".form-group"
+                        );
 
-            }
-        );
+                    if (formGroup) {
+
+                        formGroup.classList.add(
+                            "focused"
+                        );
+
+                    }
+
+                }
+            );
 
 
-        input.addEventListener(
-            "blur",
-            () => {
+            input.addEventListener(
+                "blur",
+                function () {
 
-                input
-                    .closest(".form-group")
-                    ?.classList.remove(
-                        "focused"
-                    );
+                    const formGroup =
+                        input.closest(
+                            ".form-group"
+                        );
 
-            }
-        );
+                    if (formGroup) {
 
-    });
+                        formGroup.classList.remove(
+                            "focused"
+                        );
 
+                    }
+
+                }
+            );
+
+        }
+    );
 
 
     /* =========================================== BACK TO TOP ============================================ */
@@ -1087,12 +1192,13 @@ Sent from Mohammad Ebad's portfolio website.`
     window.addEventListener(
         "scroll",
         updateBackToTop,
-        { passive: true }
+        {
+            passive: true
+        }
     );
 
 
     updateBackToTop();
-
 
 
     /* ======================================= CURSOR GLOW Desktop only ======================================== */
@@ -1105,16 +1211,22 @@ Sent from Mohammad Ebad's portfolio website.`
         !prefersReducedMotion
     ) {
 
-        let mouseX = 0;
-        let mouseY = 0;
+        let mouseX =
+            0;
 
-        let glowX = 0;
-        let glowY = 0;
+        let mouseY =
+            0;
+
+        let glowX =
+            0;
+
+        let glowY =
+            0;
 
 
         document.addEventListener(
             "mousemove",
-            event => {
+            function (event) {
 
                 mouseX =
                     event.clientX;
@@ -1123,7 +1235,9 @@ Sent from Mohammad Ebad's portfolio website.`
                     event.clientY;
 
             },
-            { passive: true }
+            {
+                passive: true
+            }
         );
 
 
@@ -1139,7 +1253,11 @@ Sent from Mohammad Ebad's portfolio website.`
 
 
             cursorGlow.style.transform =
-                `translate3d(${glowX}px, ${glowY}px, 0)`;
+                "translate3d(" +
+                glowX +
+                "px, " +
+                glowY +
+                "px, 0)";
 
 
             requestAnimationFrame(
@@ -1152,7 +1270,6 @@ Sent from Mohammad Ebad's portfolio website.`
         animateCursorGlow();
 
     }
-
 
 
     /* ====================================== MAGNETIC BUTTON EFFECT Applies to CTA buttons on desktop.=========================================== */
@@ -1170,49 +1287,54 @@ Sent from Mohammad Ebad's portfolio website.`
             );
 
 
-        magneticElements.forEach(element => {
+        magneticElements.forEach(
+            function (element) {
 
-            element.addEventListener(
-                "mousemove",
-                event => {
+                element.addEventListener(
+                    "mousemove",
+                    function (event) {
 
-                    const rect =
-                        element.getBoundingClientRect();
-
-
-                    const x =
-                        event.clientX -
-                        rect.left -
-                        rect.width / 2;
+                        const rect =
+                            element.getBoundingClientRect();
 
 
-                    const y =
-                        event.clientY -
-                        rect.top -
-                        rect.height / 2;
+                        const x =
+                            event.clientX -
+                            rect.left -
+                            rect.width / 2;
 
 
-                    element.style.transform =
-                        `translate(${x * 0.08}px, ${y * 0.08}px)`;
+                        const y =
+                            event.clientY -
+                            rect.top -
+                            rect.height / 2;
 
-                }
-            );
+
+                        element.style.transform =
+                            "translate(" +
+                            x * 0.08 +
+                            "px, " +
+                            y * 0.08 +
+                            "px)";
+
+                    }
+                );
 
 
-            element.addEventListener(
-                "mouseleave",
-                () => {
+                element.addEventListener(
+                    "mouseleave",
+                    function () {
 
-                    element.style.transform =
-                        "";
+                        element.style.transform =
+                            "";
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
     }
-
 
 
     /* ====================================== IMAGE LOAD HANDLING ==================================== */
@@ -1223,53 +1345,57 @@ Sent from Mohammad Ebad's portfolio website.`
         );
 
 
-    images.forEach(image => {
+    images.forEach(
+        function (image) {
 
-        image.addEventListener(
-            "load",
-            () => {
+            image.addEventListener(
+                "load",
+                function () {
 
-                image.classList.add(
-                    "image-loaded"
-                );
+                    image.classList.add(
+                        "image-loaded"
+                    );
 
-            }
-        );
-
-
-        image.addEventListener(
-            "error",
-            () => {
-
-                image.classList.add(
-                    "image-error"
-                );
+                }
+            );
 
 
-                console.warn(
-                    `Image could not be loaded: ${image.src}`
-                );
+            image.addEventListener(
+                "error",
+                function () {
 
-            }
-        );
+                    image.classList.add(
+                        "image-error"
+                    );
 
 
+                    console.warn(
+                        "Image could not be loaded: " +
+                        image.src
+                    );
+
+                }
+            );
 
 
-        if (image.complete) {
+            if (
+                image.complete
+            ) {
 
-            if (image.naturalWidth > 0) {
+                if (
+                    image.naturalWidth > 0
+                ) {
 
-                image.classList.add(
-                    "image-loaded"
-                );
+                    image.classList.add(
+                        "image-loaded"
+                    );
+
+                }
 
             }
 
         }
-
-    });
-
+    );
 
 
     /* =========================================== CURRENT YEAR ====================================== */
@@ -1282,22 +1408,28 @@ Sent from Mohammad Ebad's portfolio website.`
         .querySelectorAll(
             ".footer-bottom span"
         )
-        .forEach((element, index) => {
-
-            if (
-                index === 0 &&
-                element.textContent.includes(
-                    "MOHAMMAD EBAD"
-                )
+        .forEach(
+            function (
+                element,
+                index
             ) {
 
-                element.textContent =
-                    `© ${currentYear} MOHAMMAD EBAD`;
+                if (
+                    index === 0 &&
+                    element.textContent.includes(
+                        "MOHAMMAD EBAD"
+                    )
+                ) {
+
+                    element.textContent =
+                        "© " +
+                        currentYear +
+                        " MOHAMMAD EBAD";
+
+                }
 
             }
-
-        });
-
+        );
 
 
     /* ============================================= HERO PARALLAX ======================================== */
@@ -1329,22 +1461,26 @@ Sent from Mohammad Ebad's portfolio website.`
 
         hero.addEventListener(
             "mousemove",
-            event => {
+            function (event) {
 
                 const rect =
                     hero.getBoundingClientRect();
 
 
                 const x =
-                    (event.clientX -
-                        rect.left) /
+                    (
+                        event.clientX -
+                        rect.left
+                    ) /
                     rect.width -
                     0.5;
 
 
                 const y =
-                    (event.clientY -
-                        rect.top) /
+                    (
+                        event.clientY -
+                        rect.top
+                    ) /
                     rect.height -
                     0.5;
 
@@ -1352,7 +1488,11 @@ Sent from Mohammad Ebad's portfolio website.`
                 if (heroGrid) {
 
                     heroGrid.style.transform =
-                        `translate(${x * 10}px, ${y * 10}px)`;
+                        "translate(" +
+                        x * 10 +
+                        "px, " +
+                        y * 10 +
+                        "px)";
 
                 }
 
@@ -1360,7 +1500,11 @@ Sent from Mohammad Ebad's portfolio website.`
                 if (heroProfile) {
 
                     heroProfile.style.transform =
-                        `translate(${x * 6}px, ${y * 6}px)`;
+                        "translate(" +
+                        x * 6 +
+                        "px, " +
+                        y * 6 +
+                        "px)";
 
                 }
 
@@ -1370,7 +1514,7 @@ Sent from Mohammad Ebad's portfolio website.`
 
         hero.addEventListener(
             "mouseleave",
-            () => {
+            function () {
 
                 if (heroGrid) {
 
@@ -1391,7 +1535,6 @@ Sent from Mohammad Ebad's portfolio website.`
         );
 
     }
-
 
 
     /* ============================================= PROJECT VISUAL TILT ========================================== */
@@ -1409,120 +1552,144 @@ Sent from Mohammad Ebad's portfolio website.`
             );
 
 
-        visuals.forEach(visual => {
+        visuals.forEach(
+            function (visual) {
 
-            visual.addEventListener(
-                "mousemove",
-                event => {
+                visual.addEventListener(
+                    "mousemove",
+                    function (event) {
 
-                    const rect =
-                        visual.getBoundingClientRect();
-
-
-                    const rotateX =
-                        (
-                            (event.clientY -
-                                rect.top) /
-                            rect.height -
-                            0.5
-                        ) * -4;
+                        const rect =
+                            visual.getBoundingClientRect();
 
 
-                    const rotateY =
-                        (
-                            (event.clientX -
-                                rect.left) /
-                            rect.width -
-                            0.5
-                        ) * 4;
+                        const rotateX =
+                            (
+                                (
+                                    event.clientY -
+                                    rect.top
+                                ) /
+                                rect.height -
+                                0.5
+                            ) *
+                            -4;
 
 
-                    visual.style.transform =
-                        `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                        const rotateY =
+                            (
+                                (
+                                    event.clientX -
+                                    rect.left
+                                ) /
+                                rect.width -
+                                0.5
+                            ) *
+                            4;
 
-                }
-            );
+
+                        visual.style.transform =
+                            "perspective(900px) " +
+                            "rotateX(" +
+                            rotateX +
+                            "deg) " +
+                            "rotateY(" +
+                            rotateY +
+                            "deg)";
+
+                    }
+                );
 
 
-            visual.addEventListener(
-                "mouseleave",
-                () => {
+                visual.addEventListener(
+                    "mouseleave",
+                    function () {
 
-                    visual.style.transform =
-                        "";
+                        visual.style.transform =
+                            "";
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
     }
-
 
 
     /* ========================================== EXTERNAL LINKS — SAFETY ============================================= */
 
     document.querySelectorAll(
         'a[target="_blank"]'
-    ).forEach(link => {
+    ).forEach(
+        function (link) {
 
-        const rel =
-            link.getAttribute("rel") || "";
+            const rel =
+                link.getAttribute(
+                    "rel"
+                ) || "";
 
 
-        if (
-            !rel.includes("noopener")
-        ) {
+            if (
+                !rel.includes(
+                    "noopener"
+                )
+            ) {
 
-            link.setAttribute(
-                "rel",
-                `${rel} noopener noreferrer`.trim()
-            );
+                link.setAttribute(
+                    "rel",
+                    (
+                        rel +
+                        " noopener noreferrer"
+                    ).trim()
+                );
+
+            }
 
         }
-
-    });
-
+    );
 
 
     /* ====================================== PREVENT EMPTY PROJECT LINKS Only prevents "#" links. ========================================== */
 
     document.querySelectorAll(
         '.project-link[href="#"]'
-    ).forEach(link => {
+    ).forEach(
+        function (link) {
 
-        link.addEventListener(
-            "click",
-            event => {
+            link.addEventListener(
+                "click",
+                function (event) {
 
-                event.preventDefault();
+                    event.preventDefault();
 
-                showFormMessage(
-                    "Project link will be added soon.",
-                    "success"
-                );
+                    showFormMessage(
+                        "Project link will be added soon.",
+                        "success"
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
-
+        }
+    );
 
 
     /* =========================================== ACCESSIBILITY — TAB USER DETECTION ============================================ */
 
-    let usingKeyboard = false;
+    let usingKeyboard =
+        false;
 
 
     document.addEventListener(
         "keydown",
-        event => {
+        function (event) {
 
             if (
                 event.key === "Tab"
             ) {
 
-                usingKeyboard = true;
+                usingKeyboard =
+                    true;
 
                 body.classList.add(
                     "keyboard-user"
@@ -1536,11 +1703,14 @@ Sent from Mohammad Ebad's portfolio website.`
 
     document.addEventListener(
         "mousedown",
-        () => {
+        function () {
 
-            if (usingKeyboard) {
+            if (
+                usingKeyboard
+            ) {
 
-                usingKeyboard = false;
+                usingKeyboard =
+                    false;
 
                 body.classList.remove(
                     "keyboard-user"
@@ -1551,13 +1721,11 @@ Sent from Mohammad Ebad's portfolio website.`
         }
     );
 
-
-
     /* ======================================PAGE VISIBILITY Pause unnecessary effects when tab hidden. =========================================== */
 
     document.addEventListener(
         "visibilitychange",
-        () => {
+        function () {
 
             if (
                 document.hidden
@@ -1579,11 +1747,10 @@ Sent from Mohammad Ebad's portfolio website.`
     );
 
 
-
     /* ======================================= INITIALIZATION ======================================== */
 
     requestAnimationFrame(
-        () => {
+        function () {
 
             body.classList.add(
                 "page-ready"

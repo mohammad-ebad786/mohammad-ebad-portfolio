@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohammad-ebad786.github.io/mohammad-ebad-portfolio/sitemap.xml

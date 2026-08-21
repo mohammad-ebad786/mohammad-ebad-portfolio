@@ -3,73 +3,82 @@
 
 <head>
 
-    <!-- ========================================  BASIC META ====================================================== -->
+<!-- ======================================== BASIC META ====================================================== -->
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Mohammad Ebad — Senior Digital Marketing Executive, BCA Final Year Student, Web Developer and Data Analytics Learner.">
+<meta name="description"
+      content="Mohammad Ebad — Senior Digital Marketing Executive and BCA Final Year Student with experience in Google Ads, YouTube Ads, web development, SQL, Power BI and data analytics.">
 
-    <meta name="author"
-          content="Mohammad Ebad">
+<meta name="author"
+      content="Mohammad Ebad">
 
-    <meta name="keywords"
-          content="Mohammad Ebad, Digital Marketing Executive, Google Ads, YouTube Ads, BCA Student, Web Developer, Data Analytics, Power BI, SQL">
+<meta name="robots"
+      content="index, follow">
 
-    <meta name="robots"
-          content="index, follow">
+<meta name="theme-color"
+      content="#f2efe7">
 
-    <meta name="theme-color"
-          content="#f2efe7">
-
-    <meta name="color-scheme"
-          content="light">
+<meta name="color-scheme"
+      content="light">
 
 
-    <!-- ================================== OPEN GRAPH ===================================================== -->
+<!-- ======================================== CANONICAL URL ======================================== -->
 
-    <meta property="og:type"
-          content="website">
-
-    <meta property="og:title"
-          content="Mohammad Ebad — Digital Marketing × Web × Data">
-
-    <meta property="og:description"
-          content="Senior Digital Marketing Executive, BCA Final Year Student, Web Developer and Data Analytics Learner.">
-
-    <meta property="og:image"
-          content="./images/profile.jpg.jpeg">
-
-    <meta property="og:image:alt"
-          content="Mohammad Ebad">
-
-    <meta property="og:site_name"
-          content="Mohammad Ebad Portfolio">
+<link rel="canonical"
+      href="https://mohammad-ebad786.github.io/mohammad-ebad-portfolio/">
 
 
-    <!-- ======================================= TWITTER ====================================================== -->
+<!-- ======================================== OPEN GRAPH ======================================== -->
 
-    <meta name="twitter:card"
-          content="summary_large_image">
+<meta property="og:type"
+      content="website">
 
-    <meta name="twitter:title"
-          content="Mohammad Ebad — Portfolio">
+<meta property="og:url"
+      content="https://mohammad-ebad786.github.io/mohammad-ebad-portfolio/">
 
-    <meta name="twitter:description"
-          content="Digital Marketing × Web Development × Data Analytics">
+<meta property="og:title"
+      content="Mohammad Ebad — Digital Marketing × Web × Data">
 
-    <meta name="twitter:image"
-          content="./images/profile.jpg.jpeg">
+<meta property="og:description"
+      content="Senior Digital Marketing Executive and BCA Final Year Student with experience in Digital Marketing, Web Development and Data Analytics.">
+
+<meta property="og:image"
+      content="https://mohammad-ebad786.github.io/mohammad-ebad-portfolio/images/profile.jpg.jpeg">
+
+<meta property="og:image:alt"
+      content="Mohammad Ebad — Digital Marketing, Web Development and Data Analytics">
+
+<meta property="og:site_name"
+      content="Mohammad Ebad Portfolio">
+
+<meta property="og:locale"
+      content="en_IN">
 
 
-    <!-- ====================================== TITLE ====================================================== -->
+<!-- ======================================== TWITTER / X ======================================== -->
 
-    <title>
-        Mohammad Ebad — Digital Marketing × Web × Data
-    </title>
+<meta name="twitter:card"
+      content="summary_large_image">
+
+<meta name="twitter:title"
+      content="Mohammad Ebad — Digital Marketing × Web × Data">
+
+<meta name="twitter:description"
+      content="Senior Digital Marketing Executive and BCA Final Year Student specializing in Digital Marketing, Web Development and Data Analytics.">
+
+<meta name="twitter:image"
+      content="https://mohammad-ebad786.github.io/mohammad-ebad-portfolio/images/profile.jpg.jpeg">
+
+
+<!-- ======================================== TITLE ======================================== -->
+
+<title>
+    Mohammad Ebad — Digital Marketing × Web × Data
+</title>
 
 
     <!-- ====================================== FONTS ==================================================== -->
@@ -2058,7 +2067,8 @@
 </section>
 
 
-<!-- ====================================== CONTACT =========================================== -->
+<!-- ====================================== CONTACT FORM =========================================== -->
+
 
 <section class="contact section"
          id="contact"
@@ -2102,6 +2112,8 @@
 
     <div class="contact-content">
 
+
+        <!-- ================================= CONTACT INTRO ================================= -->
 
         <div class="contact-intro">
 
@@ -2188,9 +2200,29 @@
         </div>
 
 
+        <!-- ================================= CONTACT FORM — WEB3FORMS ==================================== -->
+
         <form class="contact-form"
               id="contactForm"
-              novalidate>
+              action="https://api.web3forms.com/submit"
+              method="POST">
+
+            <!-- Web3Forms Access Key -->
+
+            <input type="hidden"
+                   name="access_key"
+                   value="f87ac971-665c-43d7-a2ff-12ffdfc50d56">
+
+
+            <!-- Web3Forms Honeypot -->
+
+            <input type="checkbox"
+                   name="botcheck"
+                   class="hidden"
+                   style="display:none;">
+
+
+            <!-- NAME -->
 
             <div class="form-group">
 
@@ -2213,6 +2245,8 @@
             </div>
 
 
+            <!-- EMAIL -->
+
             <div class="form-group">
 
                 <label for="email">
@@ -2234,6 +2268,8 @@
             </div>
 
 
+            <!-- SUBJECT -->
+
             <div class="form-group">
 
                 <label for="subject">
@@ -2248,6 +2284,8 @@
 
             </div>
 
+
+            <!-- MESSAGE -->
 
             <div class="form-group">
 
@@ -2269,8 +2307,11 @@
             </div>
 
 
+            <!-- SUBMIT -->
+
             <button type="submit"
-                    class="contact-submit">
+                    class="contact-submit"
+                    id="contactSubmit">
 
                 <span>
                     Send Message
@@ -2283,6 +2324,8 @@
             </button>
 
 
+            <!-- FORM STATUS -->
+
             <p class="form-status"
                id="formStatus"
                role="status"
@@ -2293,6 +2336,8 @@
 
     </div>
 
+
+    <!-- =========================== CONTACT BOTTOM ========================================== -->
 
     <div class="contact-bottom">
 
@@ -2309,6 +2354,8 @@
 </section>
 
 </main>
+```
+
 
 
 <!-- =================================== FOOTER ============================================= -->
