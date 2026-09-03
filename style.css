@@ -1971,6 +1971,202 @@ section {
 }
 
 
+.rps-visual {
+    background:
+        linear-gradient(
+            135deg,
+            #e4e0d5,
+            #f3f0e8
+        );
+}
+
+.rps-game {
+    width: 100%;
+    max-width: 500px;
+
+    padding:
+        30px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        var(--radius-lg);
+
+    background:
+        var(--bg);
+
+    box-shadow:
+        var(--shadow-md);
+}
+
+.rps-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom:
+        15px;
+
+    border-bottom:
+        1px solid var(--line);
+
+    font-size:
+        0.55rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.1em;
+}
+
+.rps-title {
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        1.5rem;
+
+    letter-spacing:
+        -0.05em;
+}
+
+.rps-score {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+    margin-top:
+        25px;
+}
+
+.rps-score div {
+    padding:
+        15px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        var(--radius);
+
+    text-align:
+        center;
+}
+
+.rps-score small {
+    display: block;
+
+    font-size:
+        0.48rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.08em;
+
+    color:
+        var(--text-muted);
+}
+
+.rps-score strong {
+    display: block;
+
+    margin-top:
+        5px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size:
+        1.4rem;
+}
+
+.rps-choices {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        10px;
+
+    margin-top:
+        20px;
+}
+
+.rps-choice {
+    aspect-ratio:
+        1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        var(--radius);
+
+    font-size:
+        1.5rem;
+}
+
+.rps-choice span {
+    font-size:
+        0.48rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.06em;
+
+    text-transform:
+        uppercase;
+}
+
+.rps-status {
+    margin-top:
+        20px;
+
+    padding:
+        12px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        999px;
+
+    text-align:
+        center;
+
+    font-size:
+        0.5rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.08em;
+
+    text-transform:
+        uppercase;
+}
+
+
 /* ===================================== 31. BROWSER MOCKUP ================================= */
 
 .visual-browser {
@@ -4532,6 +4728,21 @@ section {
     .project-visual {
         min-height:
             320px;
+
+            .rps-game {
+    padding:
+        20px;
+}
+
+.rps-title {
+    font-size:
+        1.2rem;
+}
+
+.rps-choices {
+    gap:
+        6px;
+}
 
         padding:
             18px;
